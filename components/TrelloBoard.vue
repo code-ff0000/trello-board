@@ -4,7 +4,7 @@ import draggableComponent from "vuedraggable";
 
 import type { Column, Task } from "@/types";
 
-const columns = ref<Column[]>([
+const columns = useLocalStorage<Column[]>("trelloBoard", [
 	{
 		id: nanoid(),
 		title: "Backlog",
