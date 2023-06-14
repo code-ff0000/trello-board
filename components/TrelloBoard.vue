@@ -59,7 +59,7 @@ const alt = useKeyModifier("Alt");
 					</draggableComponent>
 
 					<footer>
-						<button class="text-gray-500">+ Add New Task</button>
+						<NewTask @add="column.tasks.push($event)" />
 					</footer>
 				</div>
 			</template>

@@ -23,5 +23,20 @@ function createTask(e: Event) {
 </script>
 
 <template>
-	<div>' <textarea name="" id="" cols="30" rows="10"></textarea></div>
+	<div>
+		<textarea
+			v-model="title"
+			@keydown.tab="createTask"
+			@keyup.enter="createTask"
+			class="focus:bg-white focus:shadow resize none rounded w-full border-rounded"
+			:class="{
+				'h-7': !focused,
+				'h-20': focused,
+			}"
+			style="outline: none !important"
+			@focus="focused = true"
+			@blur="focused = false"
+			:placeholder="!focused ? '+ Add New Task' : 'Enter task title'"
+		/>
+	</div>
 </template>
